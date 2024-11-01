@@ -1,0 +1,12 @@
+﻿
+@model IEnumerable<Lab_LTWeb_K63.Models.CHUDE>
+
+<p class="lead"> CHU DE SACH</p>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPTheochude", "Home", new { id = item.MaCD})" class="list-group-item">
+            @item.TenChuDe
+        </a>
+    }
+</div>

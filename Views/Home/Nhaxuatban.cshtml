@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Lab_LTWeb_K63.Models.NHAXUATBAN>
+
+<p class="lead"> NHA XUAT BAN</p>
+
+<div class="list-group">
+    @foreach (var item in Model)
+            {
+                <a href="@Url.Action("SPTheoNXB", "Home", new {id = item.MaNXB})">
+                    @item.TenNXB
+                </a>
+            }
+</div>

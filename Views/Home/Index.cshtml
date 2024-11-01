@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Lab_LTWeb_K63.Models.SACH>
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@section imgContent {
+        <img src="~/Content/images/hero-bg.jpg" alt="">
+    }*@
+
+@section AdditionalContent {
+    <section class="slider_section ">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        Fast Food Restaurant
+                                    </h1>
+                                    <p>
+                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        Fast Food Restaurant
+                                    </h1>
+                                    <p>
+                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container ">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-6 ">
+                                <div class="detail-box">
+                                    <h1>
+                                        Fast Food Restaurant
+                                    </h1>
+                                    <p>
+                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                    </p>
+                                    <div class="btn-box">
+                                        <a href="" class="btn1">
+                                            Order Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <ol class="carousel-indicators">
+                    <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#customCarousel1" data-slide-to="1"></li>
+                    <li data-target="#customCarousel1" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Phần bên trái (chủ đề sách) -->
+        <div class="col-md-3 left-container">
+            @Html.Action("Chude", "Home")
+            @Html.Action("Nhaxuatban", "Home")
+        </div>
+
+        <!-- Phần bên phải (danh sách sách) -->
+        <div class="col-md-9 right-content">
+            <div class="row">
+                @foreach (var sach in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a href="@Url.Action("Details", "Home", new { id = sach.Masach })">
+                                <img src="~/Content/images/book.png" alt="hinh anh sach" width="150" />
+                                <div>
+                                    <br />
+                                    <h4 style="text-align: center">@sach.Tensach</h4>
+                                    <p></p>
+                                </div>
+                                <div class="rating">
+                                    <p class="pull-right">15 reviews</p>
+                                    <p>
+                                        <span>&#9733;</span>
+                                        <span>&#9733;</span>
+                                        <span>&#9733;</span>
+                                        <span>&#9733;</span>
+                                        <span>&#9733;</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
